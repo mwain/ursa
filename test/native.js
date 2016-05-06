@@ -146,6 +146,15 @@ function test_getModulus() {
     assert.equal(value, fixture.MODULUS_HEX);
 }
 
+function test_getInverseq() {
+    var rsa = new RsaWrap();
+
+    rsa = new RsaWrap();
+    rsa.setPrivateKeyPem(fixture.PRIVATE_KEY);
+    var value = rsa.getInverseq().toString(fixture.HEX);
+    assert.equal(value, fixture.INVERSEQ_HEX);
+}
+
 function test_fail_getModulus() {
     var rsa = new RsaWrap();
 
@@ -772,6 +781,7 @@ function test() {
     test_fail_getPrivateKeyPem();
     test_getPublicKeyPem();
     test_fail_getPublicKeyPem();
+    test_getInverseq();
 
     test_privateDecrypt();
     test_fail_privateDecrypt();

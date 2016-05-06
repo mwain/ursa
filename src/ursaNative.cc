@@ -322,6 +322,7 @@ void RsaWrap::InitClass(Local<Object> target) {
     Nan::SetPrototypeMethod(tpl, "getExponent",        GetExponent);
     Nan::SetPrototypeMethod(tpl, "getPrivateExponent", GetPrivateExponent);
     Nan::SetPrototypeMethod(tpl, "getModulus",         GetModulus);
+    Nan::SetPrototypeMethod(tpl, "getInverseq",        GetInverseq);
     Nan::SetPrototypeMethod(tpl, "getPrivateKeyPem",   GetPrivateKeyPem);
     Nan::SetPrototypeMethod(tpl, "getPublicKeyPem",    GetPublicKeyPem);
     Nan::SetPrototypeMethod(tpl, "privateDecrypt",     PrivateDecrypt);
@@ -565,6 +566,21 @@ NAN_METHOD(RsaWrap::GetModulus) {
     if (obj == NULL) { NanReturnUndefined(); }
 
     bignumToBuffer(args, obj->rsa->n);
+}
+
+/**
+ * Get the inverseQ of the underlying RSA object. The return
+ * value is a Buffer containing the unsigned number in big-endian
+ * order.
+ */
+NAN_METHOD(RsaWrap::GetInverseq) {
+    NanScope();
+
+    RsaWrap *obj = ObjectWrap::Unwrap<RsaWrap>(args.Holder());
+    obj = expectSet(obj);
+    if (obj == NULL) { NanReturnUndefined(); }
+
+    bignumToBuffer(args, obj->rsa->iqmp);
 }
 
 /**

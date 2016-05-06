@@ -25,6 +25,7 @@ class RsaWrap : public node::ObjectWrap {
     static NAN_METHOD(GetExponent);
     static NAN_METHOD(GetPrivateExponent);
     static NAN_METHOD(GetModulus);
+    static NAN_METHOD(GetInverseq);
     static NAN_METHOD(GetPrivateKeyPem);
     static NAN_METHOD(GetPublicKeyPem);
     static NAN_METHOD(PrivateDecrypt);

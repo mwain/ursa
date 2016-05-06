@@ -50,6 +50,12 @@ var MODULUS_HEX =
     "424d7f3620d0b8424c6ebab771f0e5974b1cb2755e734770214358f546acc6b6" +
     "cfa70934d1c7b9e2e5a3c1897fb10f803af2998495db24511f2b2162f1fd8475";
 
+var INVERSEQ_HEX = "dacdb41a5ca0ee2431d332cbd97c85dd8570b4bdb59be4fd132" +
+                   "74954cf994de5d7cbc558ff332092ec4b3df114dffb8c1c04c0" +
+                   "540cee50b39ff65afd194a46f648227bdd3becedc9c967063b3" +
+                   "29639df0be1af88c88c0a200ddbd27149f717faa7f2c5119f4b" +
+                   "aef4acfd7eaac2fed65e00d53a729041b56ca44cb6ffb299b0b9";
+
 var PLAINTEXT = "Muffins are tasty.";
 var PLAINTEXT_PADDED = 
     "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0" +
@@ -183,6 +189,7 @@ module.exports = {
     FAKE_SHA256_TO_SIGN:        FAKE_SHA256_TO_SIGN,
     FAKE_SHA256_SIGNATURE:      FAKE_SHA256_SIGNATURE,
     MODULUS_HEX:                MODULUS_HEX,
+    INVERSEQ_HEX:               INVERSEQ_HEX,
     PASSWORD:                   PASSWORD,
     PASS_PRIVATE_KEY:           PASS_PRIVATE_KEY,
     PLAINTEXT:                  PLAINTEXT,
